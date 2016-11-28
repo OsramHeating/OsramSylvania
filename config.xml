@@ -44,7 +44,7 @@
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
   <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/>
   <access origin="*"/>
-  <plugin name="cordova-plugin-whitelist" version="1"/>
+  
   <plugin name="com.telerik.plugins.nativepagetransitions" spec="0.2.2" source="pgb" />
   <plugin name="uk.co.ilee.nativetransitions" spec="0.1.4" source="pgb" />
   <allow-intent href="http://*/*"/>

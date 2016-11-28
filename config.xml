@@ -46,7 +46,7 @@
   <access origin="*"/>
   
   
-  <plugin name="uk.co.ilee.nativetransitions" spec="0.1.4" source="pgb" />
+  
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

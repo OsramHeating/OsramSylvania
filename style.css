@@ -1,0 +1,746 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Avalon-Book';
+  src: url('fonts/Avalon-Book.eot?#iefix') format('embedded-opentype'),  url('fonts/Avalon-Book.woff') format('woff'), url('fonts/Avalon-Book.ttf')  format('truetype'), url('fonts/Avalon-Book.svg#Avalon-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avalon-Bold';
+  src: url('fonts/Avalon-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/Avalon-Bold.woff') format('woff'), url('fonts/Avalon-Bold.ttf')  format('truetype'), url('fonts/Avalon-Bold.svg#Avalon-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+a {
+      text-decoration:none;
+   }
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Meyer Reset CSS */
+
+img {
+	max-width: 100%; /*makes images scale with flexible grids*/
+	display: block; /*removes tiny space added in some browsers below images */
+}
+
+html,body {
+
+}
+
+.orangewrap {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: orange;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f28c39+0,d84c25+100 */
+background: #f28c39; /* Old browsers */
+background: -moz-linear-gradient(top, #f28c39 0%, #d84c25 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f28c39 0%,#d84c25 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f28c39 0%,#d84c25 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f28c39', endColorstr='#d84c25',GradientType=0 ); /* IE6-9 */
+copy
+}
+
+.bottomcircle {
+    position: absolute;
+    width: 200%;
+    margin-left: -50%;
+    bottom: 0;
+    margin-bottom: -20px;
+    background-color: white;
+    height: 15vh;
+    border-radius: 50%;
+    z-index: 100;
+    -webkit-box-shadow: 0px -3px 29px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px -3px 29px 0px rgba(0,0,0,0.3);
+box-shadow: 0px -3px 29px 0px rgba(0,0,0,0.3);
+}
+
+.logofit {
+    position: absolute;
+    z-index: 101;
+    width: 40%;
+    max-width: 280px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    margin-bottom: 2%;
+}
+
+.middlebar {
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2px;
+    z-index: 5;
+    background-color: black;
+    height: 83%;
+    opacity: 0.1;
+    
+}
+
+.calcwrapper {
+    position: absolute;
+    width: 100%;
+    height: 87vh;
+    margin-top: 1%;
+    /* background-color: green; */
+    
+}
+
+.column {
+    width: 45%;
+    margin-left: 3.3%;
+    float: left;
+    /* background-color: red; */
+    height: 100%;
+}
+
+
+.hitbox1 {
+    position: relative;
+    z-index: 3;
+    width: 60%;
+    height: 16vh;
+    margin-top: 11%;
+    margin-bottom: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 130px;
+}
+
+.hitbox2 {
+    position: relative;
+    z-index: 4;
+    width: 60%;
+    height: 18vh;
+    padding-top: 8%;
+    margin-bottom: 11%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 170px;
+}
+
+.hitbox3 {
+    position: relative;
+    z-index: 5;
+    width: 60%;
+    height: 16vh;
+    padding-top: 10%;
+    margin-bottom: 14%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+}
+
+.hitbox4 {
+    position: relative;
+    z-index: 6;
+    width: 60%;
+    height: 16vh;
+    padding-top: 5%;
+    margin-bottom: 16%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+}
+
+.title {
+    font-size: .9em;
+    width: 150%;
+    text-align: center;
+    margin-left: -24%;
+    color: white;
+    font-family: 'Avalon-Bold';
+    -webkit-font-smoothing: antialiased;
+}
+
+.titlelite {
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.verticalbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: 22vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    width: 90vw;
+    max-width: 1250px;
+    opacity: 0.1;
+    background-color: black;
+}
+
+.verticalbar2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: 44vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    width: 90vw;
+    max-width: 1250px;
+    opacity: 0.1;
+    background-color: black;
+}
+
+.verticalbar3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: 66vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    width: 90vw;
+    max-width: 1250px;
+    opacity: 0.1;
+    background-color: black;
+}
+
+.header {
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Avalon-Bold';
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 4%;
+}
+
+.backarrow {
+    position: absolute;
+    padding-top: 7%;
+    padding-left: 3%;
+    left: 0;
+    top: 0;
+    width: 15%;
+    
+}
+
+.headerdivider {
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    width: 90vw;
+    max-width: 1250px;
+    opacity: 0.1;
+    background-color: black;
+}
+
+.note {
+    color: white;
+    font-size: 1em;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.calcwrapper {
+    width: 95%;
+    height: 78vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fieldtitle {
+    color: white;
+    font-size: .8em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: .8em;
+}
+
+.fieldtitle2 {
+    
+    color: white;
+    font-size: .8em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.2em;
+}
+
+.orangewrap2 {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: orange;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f28c39+0,d84c25+100 */
+background: #f28c39; /* Old browsers */
+background: -moz-linear-gradient(top, #f28c39 0%, #d84c25 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f28c39 0%,#d84c25 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f28c39 0%,#d84c25 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f28c39', endColorstr='#d84c25',GradientType=0 ); /* IE6-9 */
+copy
+}
+
+#Layer_arrow {
+    max-width: 80px;
+}
+
+.fixheader {
+    max-width: 1300px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    z-index: 10;
+    background-color:#ef8939;
+}
+
+.headerdivider2 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 95vw;
+    max-width: 1250px;
+    opacity: 0.1;
+    background-color: black;
+    
+}
+
+.productswrapper {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+}
+
+.recowrapper {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-top: 10vh;
+}
+
+.productreco{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.product1{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product2{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product3{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product4{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product5{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product6{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product7{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.product8{
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+-moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
+}
+
+.preproduct {
+    font-size: 1em;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    padding-top: 5%;
+    color: #f26522;
+    margin-left: 5%;
+}
+
+.productname {
+    font-family: 'Avalon-Bold';
+    font-size: 1.4em;
+}
+
+.productdetail {
+    font-family: 'Avalon-Book';
+    font-size: .95em;
+    color: #5b5b5b;
+    line-height: 1.5em;
+    width: 95%;
+}
+
+.greydivider {
+    clear: both;
+    width: 100%;
+    height: 2px;
+    background-color: #e5e5e5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.details {
+    width: 100%;
+    background-color: #404041;
+    height: 20px;
+    margin-top: 20px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    bottom: 0;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+    
+}
+
+.header2 {
+    line-height: 13px;
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Avalon-Bold';
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 2%;
+}
+
+.headersub {
+    color: white;
+    font-size: .7em;
+    color: rgba(0,0,0,0.5);
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.fieldsub {
+    line-height: 1.5em;
+    color: black;
+    opacity: 0.5;
+    font-size: .65em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.fieldsub2 {
+    line-height: 1.5em;
+    color: black;
+    opacity: 0.5;
+    font-size: .65em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.clearspacer {
+    width: 100%;
+    height: 3%;
+}
+
+.clearspacerhard {
+    width: 100%;
+    height: 15px;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 6%;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.03);
+    font-size: 1em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    border-radius: 2px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+
+input[type=text]:focus {
+    outline: none !important;
+    border: 2px solid white;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.8);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(255, 255, 255, 0.8);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(255, 255, 255, 0.8);  
+}
+
+:-ms-input-placeholder {  
+   color: rgba(255, 255, 255, 0.8);  
+}
+
+
+
+.calculate {
+    position: absolute;
+    width: 70%;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    outline: none !important;
+    box-sizing: border-box;
+    border: 2px solid white;
+    right: 0;
+    bottom: 0;
+}
+
+.reset {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 28%;
+    opacity: 0.6;
+    color: black;
+    background-color: rgba(255,255,255,0);
+    font-size: 1.2em;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    outline: none !important;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color:  rgba(0,0,0,0.0);
+    border-radius: 2px;
+}
+
+.reccomend {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #2d2d2d;
+    font-size: 1.2em;
+    font-family: 'Avalon-Book';
+    -webkit-font-smoothing: antialiased;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    outline: none !important;
+    box-sizing: border-box;
+    border: 2px solid #2d2d2d;
+}
+
+.floatimageright {
+    position: relative;
+    float: right;
+    width: 15%;
+    margin-top: -6%;
+    margin-right: 5%;
+    
+}
+
+.special {
+    font-size: 1em;
+    font-family: 'Avalon-Bold';
+    -webkit-font-smoothing: antialiased;
+    color: #f26522;
+}
+
+
+
+
+
+
+
+
+

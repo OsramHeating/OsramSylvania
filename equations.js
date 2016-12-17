@@ -172,7 +172,7 @@ function calculationValidate(calculationType){
             alert("You need to leave two blank for the answer");
         }
     }
-    else{
+    else if(calculationType == 6){
         var a = document.getElementById("density").value;
         var b = document.getElementById("volumeflowrate").value;
         var c = document.getElementById("specificheat").value;
@@ -202,6 +202,52 @@ function calculationValidate(calculationType){
         else{
             alert("You need to leave one blank for the answer");
         }
+    }
+    else if(calculationType == 7){
+        var a = document.getElementById("TempExit").value;
+        var b = document.getElementById("TempIn").value;
+        var c = document.getElementById("TempDelta").value;
+        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
+            alert("No inputs");
+        }
+        else if(isNaN(a) || isNaN(b) || isNaN(c)){
+            alert("One or more of your inputs are not a number");
+        }
+        else if(a == "" || a == null){
+            document.getElementById("TempExit").value = delta(1, b, c);
+        }
+        else if(b == "" || b == null){
+            document.getElementById("TempIn").value = delta(2, a, c);
+        }
+        else if(c == "" || c == null){
+            document.getElementById("TempDelta").value = delta(3, a, b);
+        }
+        else{
+            alert("You need to leave one blank for the answer");
+        }
+    }
+    else if(calculationType == 8){
+        var a = document.getElementById("PSI").value;
+        var b = document.getElementById("BAR").value;
+        
+        if((a == "" || a == null) && (b == "" || b == null)){
+            alert("No inputs");
+        }
+        else if(isNaN(a) || isNaN(b)){
+            alert("One or more of your inputs are not a number");
+        }
+        else if(a == "" || a == null){
+            document.getElementById("PSI").value = psi_bar(1, b);
+        }
+        else if(b == "" || b == null){
+            document.getElementById("BAR").value = psi_bar(2, a);
+        }
+        else{
+            alert("You need to leave one blank for the answer");
+        }
+    }
+    else{
+        alert("Wrong Calculation Type Value Error");
     }
 }
 
@@ -280,33 +326,71 @@ function convection(type, value1, value2, value3, value4){
     }
 }
 
+function delta(type, value1, value2){
+    if(type == 1){
+        return value2 + value1;
+    }
+    else{
+        return value1 - value2;
+    }
+}
+
+function psi_bar(type, value){
+    if(type == 1){
+        return value / 0.0689476;
+    }
+    else{
+        return value * 0.0689476;
+    }
+}
+
 function round(num){
     //var val = (parseFloat(num).toPrecision(3));
 	return num;
 }
 
-function clearAll(){
-    document.getElementById("SCFM").value = null;
-    document.getElementById("Temp").value = null;
-    document.getElementById("Watts").value = null;
-    document.getElementById("TempC").value = null;
-    document.getElementById("TempF").value = null;
-    document.getElementById("Wattage").value = null;
-    document.getElementById("Voltage").value = null;
-    document.getElementById("LineCurrent").value = null;
-    document.getElementById("Wattage2").value = null;
-    document.getElementById("Voltage2").value = null;
-    document.getElementById("LineCurrent2").value = null;
-    document.getElementById("W").value = null;
-    document.getElementById("E").value = null;
-    document.getElementById("I").value = null;
-    document.getElementById("R").value = null;
-    document.getElementById("density").value = null;
-    document.getElementById("volumeflowrate").value = null;
-    document.getElementById("specificheat").value = null;
-    document.getElementById("temperaturedifferential").value = null;
-    document.getElementById("Q").value = null;
-    document.getElementById("productList").innerHTML = "";
+function clearAll(type){
+    if(type == 1){
+        document.getElementById("SCFM").value = null;
+        document.getElementById("Temp").value = null;
+        document.getElementById("Watts").value = null;
+    }
+    else if(type == 2){
+        document.getElementById("TempC").value = null;
+        document.getElementById("TempF").value = null;
+    }
+    else if(type == 3){
+        document.getElementById("Wattage").value = null;
+        document.getElementById("Voltage").value = null;
+        document.getElementById("LineCurrent").value = null;
+    }
+    else if(type == 4){
+        document.getElementById("Wattage2").value = null;
+        document.getElementById("Voltage2").value = null;
+        document.getElementById("LineCurrent2").value = null;
+    }
+    else if(type == 5){
+        document.getElementById("W").value = null;
+        document.getElementById("E").value = null;
+        document.getElementById("I").value = null;
+        document.getElementById("R").value = null;
+    }
+    else if(type == 6){
+        document.getElementById("density").value = null;
+        document.getElementById("volumeflowrate").value = null;
+        document.getElementById("specificheat").value = null;
+        document.getElementById("temperaturedifferential").value = null;
+        document.getElementById("Q").value = null;
+    }
+    else if(type == 7){
+        document.getElementById("TempExit").value = null;
+        document.getElementById("TempIn").value = null;
+        document.getElementById("TempDelta").value = null;
+    }
+    else{
+        document.getElementById("PSI").value = null;
+        document.getElementById("BAR").value = null;
+    }
 }
 
 function saveWattage(){

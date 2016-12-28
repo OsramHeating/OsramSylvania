@@ -100,43 +100,4 @@
         <splash src="www/res/screen/ios/Default~iphone.png"             platform="ios" width="320"  height="480" />
     </platform>
 
-    <platform name="wp8">
-        <icon   src="www/res/icon/wp8/ApplicationIcon.png"   platform="wp8" width="99"  height="99" />
-        <icon   src="www/res/icon/wp8/Background.png"        platform="wp8" width="159" height="159" />
-        <splash src="www/res/screen/wp8/screen-portrait.jpg" platform="wp8" width="768" height="1280" />
-    </platform>
-
-
-    <!--
-        Define access to external domains.
-
-        <access />            - a blank access tag denies access to all external resources.
-        <access origin="*" /> - a wildcard access tag allows access to all external resource.
-
-        Otherwise, you can specify specific domains:
-    -->
-    <access origin="*" />
-    <!--
-       <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
-       <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
-       <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
-    -->
-
-    <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
-    <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-
 </widget>

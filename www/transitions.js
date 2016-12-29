@@ -1,4 +1,5 @@
-function slideRight(){
+function slideRight(page){
+    alert("going to " + page);
     var options = {
       "direction"        : "right", // 'left|right|up|down', default 'left' (which is like 'next')
       "duration"         :  500, // in milliseconds (ms), default 400
@@ -8,7 +9,8 @@ function slideRight(){
       "androiddelay"     :  150, // same as above but for Android, default 70
       "winphonedelay"    :  250, // same as above but for Windows Phone, default 200,
       "fixedPixelsTop"   :    0, // the number of pixels of your fixed header, default 0 (iOS and Android)
-      "fixedPixelsBottom":   60  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+      "fixedPixelsBottom":   60,  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+      "href"             : page
     };
     window.plugins.nativepagetransitions.slide(
       options,
@@ -17,7 +19,7 @@ function slideRight(){
     );
 }
 
-function slideLeft(){
+function slideLeft(page){
     var options = {
       "direction"        : "left", // 'left|right|up|down', default 'left' (which is like 'next')
       "duration"         :  500, // in milliseconds (ms), default 400
@@ -27,7 +29,8 @@ function slideLeft(){
       "androiddelay"     :  150, // same as above but for Android, default 70
       "winphonedelay"    :  250, // same as above but for Windows Phone, default 200,
       "fixedPixelsTop"   :    0, // the number of pixels of your fixed header, default 0 (iOS and Android)
-      "fixedPixelsBottom":   60  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+      "fixedPixelsBottom":   60,  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+      "href"             : page
     };
     window.plugins.nativepagetransitions.slide(
       options,

@@ -77,7 +77,7 @@ html,body {
 }
 
 button.mainmenu{
-    /*position:absolute;*/
+    position:absolute;
     background: transparent;
     width:550;
     height:450;

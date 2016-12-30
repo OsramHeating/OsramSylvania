@@ -77,7 +77,7 @@ html,body {
 }
 
 button {
-
+    position:absolute;
     background: transparent;
     border: none !important;
     font-size:0;

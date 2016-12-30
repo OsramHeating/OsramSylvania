@@ -76,12 +76,12 @@ html,body {
 
 }
 
-button.mainmenu{
+button .mainmenu{
     position:absolute;
     background: transparent;
     width:550;
     height:450;
-    border: none !important;
+    /*border: none !important;*/
     font-size:0;
 }
 

@@ -12,7 +12,7 @@
       'duration': 2000,
       'slowdownfactor' : slowdownfactor,
       'href': hrf,
-      'fixedPixelsTop' : 40, // optional, the number of pixels of your fixed header, default 0 (iOS and Android)
+      'fixedPixelsTop' : 0, // optional, the number of pixels of your fixed header, default 0 (iOS and Android)
       'fixedPixelsBottom': 0  // optional, the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
     };
     window.plugins.nativepagetransitions.slide(

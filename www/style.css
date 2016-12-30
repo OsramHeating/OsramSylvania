@@ -76,6 +76,10 @@ html,body {
 
 }
 
+input {
+    width:80%;
+}
+
 button .mainmenu{
     position:absolute;
     background: transparent;

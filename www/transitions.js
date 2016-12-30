@@ -9,7 +9,7 @@
     // not passing in options makes the plugin fall back to the defaults defined in the JS API
     var theOptions = {
       'direction': direction,
-      'duration': 2000,
+      'duration': 1000,
       'slowdownfactor' : slowdownfactor,
       'href': hrf,
       'fixedPixelsTop' : 0, // optional, the number of pixels of your fixed header, default 0 (iOS and Android)

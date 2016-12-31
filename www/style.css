@@ -80,25 +80,6 @@ input {
     width:95%;
 }
 
-button .mainmenu{
-    position:absolute;
-    background: transparent;
-    width:550;
-    height:450;
-    /*border: none !important;*/
-    font-size:0;
-}
-
-button .backbutton{
-    position:absolute;
-    background: transparent;
-    width:277;
-    height:114;
-    /*border: none !important;*/
-    font-size:0;
-}
-
-
 .orangewrap {
     overflow: hidden;
     position: relative;

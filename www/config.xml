@@ -91,7 +91,7 @@
 
     <splash src="splash.png" />
     
-    <gap:config-file platform="android" parent = "/manifest">
+    <config-file platform="android" parent = "/manifest">
         <android:windowSoftInputMode = "adjustNothing">
-    </gap:config-file>
+    </config-file>
 </widget>

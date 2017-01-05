@@ -8,6 +8,8 @@
     }
     // not passing in options makes the plugin fall back to the defaults defined in the JS API
     var theOptions = {
+      'androiddelay': 100,
+      'iosdelay': 100,
       'direction': direction,
       'duration': 500,
       'slowdownfactor' : slowdownfactor,

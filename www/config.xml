@@ -25,7 +25,7 @@
     <preference name="android-minSdkVersion"        value="14" />
     <preference name="Orientation"                  value="portrait" />
     <preference name="KeyboardShrinksView"          value="false" />
-    <preference name="BackgroundColor"              value="0xff0ff6600"/> 
+    <preference name="BackgroundColor"              value="0xffffffff" /><!--value="0xff0ff6600"--> 
     <!-- <preference name="phonegap-version"             value="cli-6.3.0" /> -->
 
     <!-- Plugins -->
@@ -90,8 +90,4 @@
     </platform>
 
     <splash src="splash.png" />
-    
-    <config-file platform="android" parent = "/manifest">
-        <android:windowSoftInputMode = "adjustNothing">
-    </config-file>
 </widget>

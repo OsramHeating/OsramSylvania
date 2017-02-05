@@ -45,11 +45,6 @@ body {
 	line-height: 1;
 }
 
-a {
-      text-decoration:none;
-      outline: 0;
-   }
-
 ol, ul {
 	list-style: none;
 }

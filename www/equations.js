@@ -1,8 +1,14 @@
+var lastCalculatedValue = null;
+
 function calculationValidate(calculationType){
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;
         var b = document.getElementById("Temp").value;
         var c = document.getElementById("Watts").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
             alert("No inputs");
@@ -12,12 +18,15 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("SCFM").value = power_flowrate_temp(1, b, c);
+            lastCalculatedValue = power_flowrate_temp(1, b, c);
         }
         else if(b == "" || b == null){
             document.getElementById("Temp").value = power_flowrate_temp(2, a, c);
+            lastCalculatedValue = power_flowrate_temp(2, a, c);
         }
         else if(c == "" || c == null){
             document.getElementById("Watts").value = power_flowrate_temp(3, a, b);
+            lastCalculatedValue = power_flowrate_temp(3, a, b);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -27,6 +36,9 @@ function calculationValidate(calculationType){
         var a = document.getElementById("TempC").value;
         var b = document.getElementById("TempF").value;
         
+        a = Number(a);
+        b = Number(b);
+        
         if((a == "" || a == null) && (b == "" || b == null)){
             alert("No inputs");
         }
@@ -35,9 +47,11 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("TempC").value = temp_conversion(1, b);
+            lastCalculatedValue = temp_conversion(1, b);
         }
         else if(b == "" || b == null){
             document.getElementById("TempF").value = temp_conversion(2, a);
+            lastCalculatedValue = temp_conversion(2, a);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -47,6 +61,11 @@ function calculationValidate(calculationType){
         var a = document.getElementById("Wattage").value;
         var b = document.getElementById("Voltage").value;
         var c = document.getElementById("LineCurrent").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
             alert("No inputs");
         }
@@ -55,12 +74,15 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("Wattage").value = three_phase_unit(1, b, c);
+            lastCalculatedValue = three_phase_unit(1, b, c);
         }
         else if(b == "" || b == null){
             document.getElementById("Voltage").value = three_phase_unit(2, a, c);
+            lastCalculatedValue = three_phase_unit(2, a, c);
         }
         else if(c == "" || c == null){
             document.getElementById("LineCurrent").value = three_phase_unit(3, a, b);
+            lastCalculatedValue = three_phase_unit(3, a, b);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -70,6 +92,11 @@ function calculationValidate(calculationType){
         var a = document.getElementById("Wattage2").value;
         var b = document.getElementById("Voltage2").value;
         var c = document.getElementById("LineCurrent2").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
             alert("No inputs");
         }
@@ -78,12 +105,15 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("Wattage2").value = single_phase_unit(1, b, c);
+            lastCalculatedValue = single_phase_unit(1, b, c);
         }
         else if(b == "" || b == null){
             document.getElementById("Voltage2").value = single_phase_unit(2, a, c);
+            lastCalculatedValue = single_phase_unit(2, a, c);
         }
         else if(c == "" || c == null){
             document.getElementById("LineCurrent2").value = single_phase_unit(3, a, b);
+            lastCalculatedValue = single_phase_unit(3, a, b);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -94,6 +124,12 @@ function calculationValidate(calculationType){
         var b = document.getElementById("E").value;
         var c = document.getElementById("I").value;
         var d = document.getElementById("R").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        d = Number(d);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null)){
             alert("No inputs");
         }
@@ -134,6 +170,13 @@ function calculationValidate(calculationType){
         var c = document.getElementById("specificheat").value;
         var d = document.getElementById("temperaturedifferential").value;
         var e = document.getElementById("Q").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        d = Number(d);
+        e = Number(e);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null) && (e == "" || e == null)){
             alert("No inputs");
         }
@@ -142,18 +185,23 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("density").value = convection(2, e, b, c, d);
+            lastCalculatedValue = convection(2, e, b, c, d);
         }
         else if(b == "" || b == null){
             document.getElementById("volumeflowrate").value = convection(2, e, a, c, d);
+            lastCalculatedValue = convection(2, e, a, c, d);
         }
         else if(c == "" || c == null){
             document.getElementById("specificheat").value = convection(2, e, a, b, d);
+            lastCalculatedValue = convection(2, e, a, b, d);
         }
         else if(d == "" || d == null){
             document.getElementById("temperaturedifferential").value = convection(2, e, a, b, c);
+            lastCalculatedValue = convection(2, e, a, b, c);
         }
         else if(e == "" || e == null){
             document.getElementById("Q").value = convection(1, a, b, c, d);
+            lastCalculatedValue = convection(1, a, b, c, d);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -163,6 +211,11 @@ function calculationValidate(calculationType){
         var a = document.getElementById("TempExit").value;
         var b = document.getElementById("TempIn").value;
         var c = document.getElementById("TempDelta").value;
+        
+        a = Number(a);
+        b = Number(b);
+        c = Number(c);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
             alert("No inputs");
         }
@@ -171,12 +224,15 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("TempExit").value = delta(1, b, c);
+            lastCalculatedValue = delta(1, b, c);
         }
         else if(b == "" || b == null){
             document.getElementById("TempIn").value = delta(2, a, c);
+            lastCalculatedValue = delta(2, a, c);
         }
         else if(c == "" || c == null){
             document.getElementById("TempDelta").value = delta(3, a, b);
+            lastCalculatedValue = delta(3, a, b);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -186,6 +242,9 @@ function calculationValidate(calculationType){
         var a = document.getElementById("PSI").value;
         var b = document.getElementById("BAR").value;
         
+        a = Number(a);
+        b = Number(b);
+        
         if((a == "" || a == null) && (b == "" || b == null)){
             alert("No inputs");
         }
@@ -194,9 +253,11 @@ function calculationValidate(calculationType){
         }
         else if(a == "" || a == null){
             document.getElementById("PSI").value = psi_bar(1, b);
+            lastCalculatedValue = psi_bar(1, b);
         }
         else if(b == "" || b == null){
             document.getElementById("BAR").value = psi_bar(2, a);
+            lastCalculatedValue = psi_bar(2, a);
         }
         else{
             alert("You need to leave one blank for the answer");
@@ -205,6 +266,14 @@ function calculationValidate(calculationType){
     else{
         alert("Wrong Calculation Type Value Error");
     }
+    
+    if(lastCalculatedValue != null){
+        localStorage.setItem("savedValue", JSON.stringify(lastCalculatedValue));
+    }
+}
+
+function getSavedValue(){
+    alert(JSON.parse(localStorage.getItem("savedValue")));
 }
 
 function power_flowrate_temp (type, value1, value2){

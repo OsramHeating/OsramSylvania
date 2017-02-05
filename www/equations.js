@@ -1,5 +1,18 @@
 var lastCalculatedValue = null;
 
+function alertDismissed(){
+    
+}
+
+function showAlert(msg) {
+        navigator.notification.alert(
+            msg,  // message
+            alertDismissed,         // callback
+            'ERROR',            // title
+            'OK'                  // buttonName
+        );
+}
+
 function calculationValidate(calculationType){
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;
@@ -11,10 +24,10 @@ function calculationValidate(calculationType){
         c = Number(c);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("SCFM").value = power_flowrate_temp(1, b, c);
@@ -29,7 +42,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = power_flowrate_temp(3, a, b);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 2){
@@ -40,10 +53,10 @@ function calculationValidate(calculationType){
         b = Number(b);
         
         if((a == "" || a == null) && (b == "" || b == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("TempC").value = temp_conversion(1, b);
@@ -54,7 +67,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = temp_conversion(2, a);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 3){
@@ -67,10 +80,10 @@ function calculationValidate(calculationType){
         c = Number(c);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("Wattage").value = three_phase_unit(1, b, c);
@@ -85,7 +98,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = three_phase_unit(3, a, b);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 4){
@@ -98,10 +111,10 @@ function calculationValidate(calculationType){
         c = Number(c);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("Wattage2").value = single_phase_unit(1, b, c);
@@ -116,7 +129,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = single_phase_unit(3, a, b);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 5){
@@ -131,10 +144,10 @@ function calculationValidate(calculationType){
         d = Number(d);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if((a == "" || a == null) && (b == "" || b == null)){
             document.getElementById("E").value = ohms_law(1, c, d);
@@ -161,7 +174,7 @@ function calculationValidate(calculationType){
             document.getElementById("R").value = ohms_law(5, b, a);
         }
         else{
-            alert("You need to leave two blank for the answer");
+            showAlert("You need to leave two blank for the answer");
         }
     }
     else if(calculationType == 6){
@@ -178,10 +191,10 @@ function calculationValidate(calculationType){
         e = Number(e);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null) && (e == "" || e == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("density").value = convection(2, e, b, c, d);
@@ -204,7 +217,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = convection(1, a, b, c, d);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 7){
@@ -217,10 +230,10 @@ function calculationValidate(calculationType){
         c = Number(c);
         
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("TempExit").value = delta(1, b, c);
@@ -235,7 +248,7 @@ function calculationValidate(calculationType){
             lastCalculatedValue = delta(3, a, b);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else if(calculationType == 8){
@@ -246,10 +259,10 @@ function calculationValidate(calculationType){
         b = Number(b);
         
         if((a == "" || a == null) && (b == "" || b == null)){
-            alert("No inputs");
+            showAlert("No inputs");
         }
         else if(isNaN(a) || isNaN(b)){
-            alert("One or more of your inputs are not a number");
+            showAlert("One or more of your inputs are not a number");
         }
         else if(a == "" || a == null){
             document.getElementById("PSI").value = psi_bar(1, b);
@@ -260,11 +273,11 @@ function calculationValidate(calculationType){
             lastCalculatedValue = psi_bar(2, a);
         }
         else{
-            alert("You need to leave one blank for the answer");
+            showAlert("You need to leave one blank for the answer");
         }
     }
     else{
-        alert("Wrong Calculation Type Value Error");
+        showAlert("Wrong Calculation Type Value Error");
     }
     
     if(lastCalculatedValue != null){

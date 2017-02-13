@@ -28,6 +28,7 @@
             document.addEventListener("deviceready", function(){alert("123");},true);
             
             var devicePlatform = device.platform;
+            alert(devicePlatform);
             if(devicePlatform == "iOS"){
                 document.getElementById("body").style.padding-top = "10px";
                 alert("IOS");

@@ -22,10 +22,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
 
-    <body>
+    <body id="body">
         <script type = "text/javascript">
             app.initialize();
             document.addEventListener("deviceready", function(){alert("123");},true);
+            
+            var devicePlatform = device.platform;
+            if(devicePlatform == "iOS"){
+                document.getElementById("body").style.padding-top = "10px";
+                alert("IOS");
+            }
             
             function showAlert(msg) {
                 navigator.notification.alert(

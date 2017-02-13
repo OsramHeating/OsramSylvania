@@ -4,15 +4,6 @@ function alertDismissed(){
     
 }
 
-function showAlert(msg) {
-        navigator.notification.alert(
-            msg,  // message
-            alertDismissed,         // callback
-            'ERROR',            // title
-            'OK'                  // buttonName
-        );
-}
-
 function calculationValidate(calculationType){
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;

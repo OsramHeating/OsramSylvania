@@ -25,6 +25,15 @@
 	<script type = "text/javascript">
 		app.initialize();
 		document.addEventListener("deviceready", function(){alert("123");},true);
+        
+        function showAlert(msg) {
+            navigator.notification.alert(
+                msg,  // message
+                alertDismissed,         // callback
+                'ERROR',            // title
+                'OK'                  // buttonName
+            );
+        }
 	</script>
         
 	<h1 class="header">Heat <span class="titlelite">Transfer</span>

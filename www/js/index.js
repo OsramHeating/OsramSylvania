@@ -33,7 +33,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function(pageNum) {
-                alert(pageNum)
+                var fileName = location.pathname.split("/").slice(-1)
+                alert(fileName)
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
                     var ow = document.getElementsByClassName('calcwrapper');

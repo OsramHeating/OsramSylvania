@@ -35,13 +35,16 @@ var app = {
     onDeviceReady: function() {
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
-                    alert("test");
                     var ow = document.getElementsByClassName('calcwrapper');
-                    alert(ow.length)
-                    for(var i = 0;i<ow.length;i++){
-                        ow[i].style.top = '100px';
-                    }
-                    alert("test");
+                    var mb = document.getElementsByClassName('middlebar');
+                    var vb1 = document.getElementsByClassName('verticalbar');
+                    var vb2 = document.getElementsByClassName('verticalbar2');
+                    var vb3 = document.getElementsByClassName('verticalbar3')
+                    ow[0].style.top = "20px"
+                    mb[0].style.top = "20px"
+                    vb1[0].style.top = "20px"
+                    vb2[0].style.top = "20px"
+                    vb3[0].style.top = "20px"
                 }
                 
             function showAlert(msg) {
@@ -52,9 +55,5 @@ var app = {
                     'OK'                  // buttonName
             );
         }
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
     }
 };

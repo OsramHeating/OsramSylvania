@@ -43,10 +43,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    -webkit-border-radius:0;
-    -webkit-appearance: none;
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
 }
 
 ol, ul {

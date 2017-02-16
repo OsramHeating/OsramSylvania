@@ -13,9 +13,9 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
         
         <!--Links to a modernizer JavaScript file that fixes a lot of issues with old browsers-->
+        <script src="cordova.js"></script>
         <script src="js/modernizr.js"></script>
         <script src="js/index.js"></script>
-        <script src="cordova.js"></script>
         <script src="transitions.js"></script>
         
         <!--Makes the site so it won't scale down on small devices -->
@@ -97,7 +97,7 @@
         </div>
         <script type = "text/javascript">
             app.initialize();
-            document.addEventListener("deviceready", onDeviceReady(0), false);
+            document.addEventListener("deviceready", onDeviceReady, false);
             
             function onDeviceReady(){
                 

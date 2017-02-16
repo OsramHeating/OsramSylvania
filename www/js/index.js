@@ -36,7 +36,10 @@ var app = {
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
                     alert("test");
-                    document.getElementsByClassName('orangewrap').style.top = '100px';
+                    var ow = document.getElementsByClassName('orangewrap');
+                    for(var i = 0;i<ow.length;i++){
+                        ow[i].style.top = '100px';
+                    }
                     alert("test");
                 }
                 

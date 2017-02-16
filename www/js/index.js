@@ -46,7 +46,7 @@ var app = {
                         var vb2 = document.getElementsByClassName('verticalbar2');
                         var vb3 = document.getElementsByClassName('verticalbar3');
                         ow[0].style.top = "15px";
-                        mb[0].style.top = "100px";
+                        mb[0].style.top = "3%";
                         vb1[0].style.top = "15px";
                         vb2[0].style.top = "15px";
                         vb3[0].style.top = "15px";
@@ -57,17 +57,19 @@ var app = {
                     else{
                         var hd = document.getElementsByClassName('header');
                         var hdd = document.getElementsByClassName('headerdivider');
-                        hd[0].style.top = "15px";
-                        hdd[0].style.top = "15px";
+                        hd[0].style.top = "5%";
+                        hdd[0].style.top = "5%";
                         var cw = document.getElementsByClassName('calcwrapper');
-                        cw[0].style.bottom = "5px";
+                        cw[0].style.bottom = "2%";
                     }
                 }
     }
 };
 
 function showAlert(msg) {
+    alert("called");
     if(ready){
+        alert("device ready");
         navigator.notification.alert(
             msg,  // message
             alertDismissed,         // callback
@@ -78,7 +80,9 @@ function showAlert(msg) {
 }
 
 function slide(direction, color, slowdownfactor, hrf) {
+    alert("called");
     if(ready){
+        alert("device ready");
         if (!hrf) {
           setTimeout(function () {
             // update the page inside this timeout

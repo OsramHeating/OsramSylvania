@@ -34,6 +34,22 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        alert("adfiadfnbasodnbadnionbd");
+                var devicePlatform = device.platform;
+                alert(devicePlatform);
+                if(devicePlatform == "iOS"){
+                    
+                    alert("IOS");
+                }
+                
+            function showAlert(msg) {
+                navigator.notification.alert(
+                    msg,  // message
+                    alertDismissed,         // callback
+                    'ERROR',            // title
+                    'OK'                  // buttonName
+            );
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

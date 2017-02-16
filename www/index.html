@@ -100,21 +100,7 @@
             document.addEventListener("deviceready", onDeviceReady, false);
             
             function onDeviceReady(){
-                var devicePlatform = device.platform;
-                alert(devicePlatform);
-                if(devicePlatform == "iOS"){
-                    
-                    alert("IOS");
-                }
                 
-                function showAlert(msg) {
-                    navigator.notification.alert(
-                        msg,  // message
-                        alertDismissed,         // callback
-                        'ERROR',            // title
-                        'OK'                  // buttonName
-                    );
-                }
             }
         </script>
     </body>

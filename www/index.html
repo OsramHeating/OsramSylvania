@@ -97,22 +97,24 @@
         </div>
         <script type = "text/javascript">
             app.initialize();
-            document.addEventListener("deviceready", function(){showAlert("device ready");alert("dev ready");},true);
+            document.addEventListener("deviceready", onDeviceReady, false);
             
-            var devicePlatform = device.platform;
-            alert(devicePlatform);
-            if(devicePlatform == "iOS"){
-                document.getElementById("body").style.padding-top = "10px";
-                alert("IOS");
-            }
-            
-            function showAlert(msg) {
-                navigator.notification.alert(
-                    msg,  // message
-                    alertDismissed,         // callback
-                    'ERROR',            // title
-                    'OK'                  // buttonName
-                );
+            function onDeviceReady(){
+                var devicePlatform = device.platform;
+                alert(devicePlatform);
+                if(devicePlatform == "iOS"){
+                    
+                    alert("IOS");
+                }
+                
+                function showAlert(msg) {
+                    navigator.notification.alert(
+                        msg,  // message
+                        alertDismissed,         // callback
+                        'ERROR',            // title
+                        'OK'                  // buttonName
+                    );
+                }
             }
         </script>
     </body>

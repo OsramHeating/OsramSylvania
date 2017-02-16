@@ -34,19 +34,29 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function(pageNum) {
                 var fileName = location.pathname.split("/").slice(-1)
-                alert(fileName)
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
-                    var ow = document.getElementsByClassName('calcwrapper');
-                    var mb = document.getElementsByClassName('middlebar');
-                    var vb1 = document.getElementsByClassName('verticalbar');
-                    var vb2 = document.getElementsByClassName('verticalbar2');
-                    var vb3 = document.getElementsByClassName('verticalbar3')
-                    ow[0].style.top = "15px"
-                    mb[0].style.top = "15px"
-                    vb1[0].style.top = "15px"
-                    vb2[0].style.top = "15px"
-                    vb3[0].style.top = "15px"
+                    if(fileName == "index.html"){
+                        var ow = document.getElementsByClassName('calcwrapper');
+                        var mb = document.getElementsByClassName('middlebar');
+                        var vb1 = document.getElementsByClassName('verticalbar');
+                        var vb2 = document.getElementsByClassName('verticalbar2');
+                        var vb3 = document.getElementsByClassName('verticalbar3');
+                        ow[0].style.top = "15px";
+                        mb[0].style.top = "15px";
+                        vb1[0].style.top = "15px";
+                        vb2[0].style.top = "15px";
+                        vb3[0].style.top = "15px";
+                    }
+                    else if(fileName == "products.html"){
+                        
+                    }
+                    else{
+                        var hd = document.getElementsByClassName('header');
+                        var hdd = document.getElementsByClassName('headerdivider');
+                        hd[0].style.top = "15px";
+                        hdd[0].style.top = "15px";
+                    }
                 }
                 
             function showAlert(msg) {

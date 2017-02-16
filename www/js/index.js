@@ -35,6 +35,7 @@ var app = {
     onDeviceReady: function() {
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
+                    alert("test");
                     document.getElementsByClassName('orangewrap').style.top = '100px';
                     alert("test");
                 }

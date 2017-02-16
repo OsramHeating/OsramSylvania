@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
+var ready = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,6 +35,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function(pageNum) {
+                ready = true;
                 var fileName = location.pathname.split("/").slice(-1)
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
@@ -43,7 +46,7 @@ var app = {
                         var vb2 = document.getElementsByClassName('verticalbar2');
                         var vb3 = document.getElementsByClassName('verticalbar3');
                         ow[0].style.top = "15px";
-                        mb[0].style.top = "20px";
+                        mb[0].style.top = "100px";
                         vb1[0].style.top = "15px";
                         vb2[0].style.top = "15px";
                         vb3[0].style.top = "15px";
@@ -58,14 +61,48 @@ var app = {
                         hdd[0].style.top = "15px";
                     }
                 }
-                
-            function showAlert(msg) {
-                navigator.notification.alert(
-                    msg,  // message
-                    alertDismissed,         // callback
-                    'ERROR',            // title
-                    'OK'                  // buttonName
-            );
-        }
     }
 };
+
+function showAlert(msg) {
+    if(ready){
+        navigator.notification.alert(
+            msg,  // message
+            alertDismissed,         // callback
+            'ERROR',            // title
+            'OK'                  // buttonName
+        );
+    }
+}
+
+function slide(direction, color, slowdownfactor, hrf) {
+    if(ready){
+        if (!hrf) {
+          setTimeout(function () {
+            // update the page inside this timeout
+            document.querySelector("#title").innerHTML = direction;
+            document.querySelector("html").style.background = color;
+          }, 20);
+        }
+        // not passing in options makes the plugin fall back to the defaults defined in the JS API
+        var theOptions = {
+          'androiddelay': 100,
+          'iosdelay': 100,
+          'direction': direction,
+          'duration': 500,
+          'slowdownfactor' : slowdownfactor,
+          'href': hrf,
+          'fixedPixelsTop' : 0, // optional, the number of pixels of your fixed header, default 0 (iOS and Android)
+          'fixedPixelsBottom': 0  // optional, the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+        };
+        window.plugins.nativepagetransitions.slide(
+            theOptions,
+            function () {
+              console.log('------------------- slide transition finished');
+            },
+            function (msg) {
+              alert('error: ' + msg);
+            });
+    }
+  }
+

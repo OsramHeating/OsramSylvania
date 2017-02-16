@@ -1,4 +1,4 @@
-  function slide(direction, color, slowdownfactor, hrf) {
+function slide(direction, color, slowdownfactor, hrf) {
     if (!hrf) {
       setTimeout(function () {
         // update the page inside this timeout

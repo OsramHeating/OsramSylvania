@@ -35,8 +35,8 @@ var app = {
     onDeviceReady: function() {
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
-                    alert("IOS");
-                    document.body.style.paddingTop = '10px'
+                    document.getElementsByClassName('orangewrap').style.paddingTop = '10px';
+                    alert("test");
                 }
                 
             function showAlert(msg) {

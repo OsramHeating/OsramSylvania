@@ -23,10 +23,7 @@
     </head>
 
     <body id="body">
-        <script type = "text/javascript">
-            app.initialize();
-            document.addEventListener("deviceready", function(){alert("123");},true);
-            
+        <script type = "text/javascript">           
             var devicePlatform = device.platform;
             alert(devicePlatform);
             if(devicePlatform == "iOS"){
@@ -115,6 +112,9 @@
         <div class="verticalbar3"></div>
         
         </div>
-    
+        <script type = "text/javascript">
+            app.initialize();
+            document.addEventListener("deviceready", function(){showAlert("device ready");},true);
+        </script>
     </body>
 </html>

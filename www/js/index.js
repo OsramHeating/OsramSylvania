@@ -32,7 +32,8 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function(pageNum) {
+                alert(pageNum)
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
                     var ow = document.getElementsByClassName('calcwrapper');
@@ -40,11 +41,11 @@ var app = {
                     var vb1 = document.getElementsByClassName('verticalbar');
                     var vb2 = document.getElementsByClassName('verticalbar2');
                     var vb3 = document.getElementsByClassName('verticalbar3')
-                    ow[0].style.top = "20px"
-                    mb[0].style.top = "20px"
-                    vb1[0].style.top = "20px"
-                    vb2[0].style.top = "20px"
-                    vb3[0].style.top = "20px"
+                    ow[0].style.top = "15px"
+                    mb[0].style.top = "15px"
+                    vb1[0].style.top = "15px"
+                    vb2[0].style.top = "15px"
+                    vb3[0].style.top = "15px"
                 }
                 
             function showAlert(msg) {

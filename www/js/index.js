@@ -36,7 +36,8 @@ var app = {
                 var devicePlatform = device.platform;
                 if(devicePlatform == "iOS"){
                     alert("test");
-                    var ow = document.getElementsByClassName('orangewrap');
+                    var ow = document.getElementsByClassName('calcwrapper');
+                    alert(ow.length)
                     for(var i = 0;i<ow.length;i++){
                         ow[i].style.top = '100px';
                     }

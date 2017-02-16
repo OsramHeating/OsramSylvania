@@ -59,6 +59,8 @@ var app = {
                         var hdd = document.getElementsByClassName('headerdivider');
                         hd[0].style.top = "15px";
                         hdd[0].style.top = "15px";
+                        var cw = document.getElementsByClassName('calcwrapper');
+                        cw[0].style.bottom = "5px";
                     }
                 }
     }

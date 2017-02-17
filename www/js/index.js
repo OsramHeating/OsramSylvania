@@ -67,9 +67,7 @@ var app = {
 };
 
 function showAlert(msg) {
-    alert("called");
     if(ready){
-        alert("device ready");
         navigator.notification.alert(
             msg,  // message
             alertDismissed,         // callback
@@ -80,9 +78,7 @@ function showAlert(msg) {
 }
 
 function slide(direction, color, slowdownfactor, hrf) {
-    alert("called");
     if(ready){
-        alert("device ready");
         if (!hrf) {
           setTimeout(function () {
             // update the page inside this timeout

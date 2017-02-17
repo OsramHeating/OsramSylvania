@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html>
 <head>
 	<title>Single Phase</title>
 	<meta charset="utf-8">
@@ -18,20 +19,6 @@
 <body>
     
     <div class="orangewrap">
-        
-	<script type = "text/javascript">
-		app.initialize();
-		document.addEventListener("deviceready", function(){alert("123");},true);
-        
-        function showAlert(msg) {
-            navigator.notification.alert(
-                msg,  // message
-                alertDismissed,         // callback
-                'ERROR',            // title
-                'OK'                  // buttonName
-            );
-        }
-	</script>
         
 	<h1 class="header">Single <span class="titlelite">Phase</span>
     <div class="backarrow" onclick="slide('right', 'black', 0.1, 'index.html');">
@@ -64,9 +51,9 @@
 
 
 
-<input class="reset" type='button' onclick='clearAll(4);' value='RESET'></button>
+<input class="reset" type='button' onclick='clearAll(4);' value='RESET'></input>
 
-    <input class="calculate" type='button' onclick='calculationValidate(4);' value='CALCULATE'></button>
+    <input class="calculate" type='button' onclick='calculationValidate(4);' value='CALCULATE'></input>
 
     
 
@@ -75,4 +62,9 @@
     </div>
 
 </div>
+<script type = "text/javascript">
+            app.initialize();
+            document.addEventListener("deviceready", onDeviceReady,true);
+        </script>
 </body>
+</html>

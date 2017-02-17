@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html>
 <head>
 	<title>Heat Transfer</title>
 	<meta charset="utf-8">
@@ -18,20 +19,6 @@
 <body>
     
     <div class="orangewrap">
-        
-	<script type = "text/javascript">
-		app.initialize();
-		document.addEventListener("deviceready", function(){alert("123");},true);
-        
-        function showAlert(msg) {
-            navigator.notification.alert(
-                msg,  // message
-                alertDismissed,         // callback
-                'ERROR',            // title
-                'OK'                  // buttonName
-            );
-        }
-	</script>
         
 	<h1 class="header">Heat <span class="titlelite">Transfer</span>
     
@@ -76,9 +63,9 @@
 
 
 
-<input class="reset" type='button' onclick='clearAll(6);' value='RESET'></button>
+<input class="reset" type='button' onclick='clearAll(6);' value='RESET'></input>
 
-    <input class="calculate" type='button' onclick='calculationValidate(6);' value='CALCULATE'></button>
+    <input class="calculate" type='button' onclick='calculationValidate(6);' value='CALCULATE'></input>
 
     
 
@@ -87,4 +74,9 @@
     </div>
 
 </div>
+<script type = "text/javascript">
+            app.initialize();
+            document.addEventListener("deviceready", onDeviceReady,true);
+        </script>
 </body>
+</html>

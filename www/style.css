@@ -89,7 +89,6 @@ background: -moz-linear-gradient(top, #f28c39 0%, #d84c25 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top, #f28c39 0%,#d84c25 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, #f28c39 0%,#d84c25 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f28c39', endColorstr='#d84c25',GradientType=0 ); /* IE6-9 */
-copy
 }
 
 .bottomcircle {
@@ -121,6 +120,7 @@ box-shadow: 0px -3px 29px 0px rgba(0,0,0,0.3);
 }
 
 .middlebar {
+    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
     width: 2px;

@@ -34,7 +34,7 @@
     <preference name="KeyboardShrinksView"          value="false" />
     <preference name="BackgroundColor"              value="0xffffffff" />
     <preference name="StatusBarOverlaysWebView"     value="false" />
-    <preference name="StatusBarBackgroundColor"     value="#FFFFFF" />
+    <preference name="StatusBarBackgroundColor"     value="#000000" />
     <preference name="StatusBarStyle"               value="lightcontent" />
     
     <icon src="icon.png"/>

@@ -38,6 +38,7 @@ var app = {
                 ready = true;
                 var fileName = location.pathname.split("/").slice(-1)
                 var devicePlatform = device.platform;
+                /*
                 if(devicePlatform == "iOS"){
                     if(fileName == "index.html"){
                         var ow = document.getElementsByClassName('calcwrapper');
@@ -63,6 +64,7 @@ var app = {
                         cw[0].style.bottom = "2%";
                     }
                 }
+                */
     }
 };
 

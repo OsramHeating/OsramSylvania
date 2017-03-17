@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 
-<body onload="clearProducts();">
+<body>
     
     <div class="orangewrap">
 	<h1 class="header">Power <span class="titlelite">Flowrate</span>
@@ -48,11 +48,11 @@
     <div class="clearspacer"></div>
     
 	<p id='1-answer'></p>
-<input class="reccomend" type='button' onclick="slide('left', 'black', 0.1, 'products.html');" value='SEE RECOMMENDATIONS'></input>
+<input class="reccomend" type='button' onclick="getProducts();slide('left', 'black', 0.1, 'products.html');" value='SEE RECOMMENDATIONS'></input>
 
 <input class="reset" type='button' onclick='clearAll(1);' value='RESET'></input>
 
-    <input class="calculate" type='button' onclick='calculationValidate(1);getProducts();' value='CALCULATE'></input>
+    <input class="calculate" type='button' onclick='calculationValidate(1);' value='CALCULATE'></input>
 
     </div>
     </div>

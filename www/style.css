@@ -595,6 +595,7 @@ box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
     width: 100%;
     text-align: center;
     -webkit-text-size-adjust: none;
+    padding-top: 5%;
 }
 
 .headersub {

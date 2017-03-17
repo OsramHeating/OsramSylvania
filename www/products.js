@@ -40,6 +40,10 @@ function applyInnerHtml(){
     document.getElementById("productsList").innerHTML = JSON.parse(localStorage.getItem("listItems"));
 }
 
+function clearProducts(){
+    localStorage.setItem("listItems", JSON.stringify(""));
+}
+
 var Series1n2n3 = {
 	powerLower: 0.6, 
 	powerUpper: 2.4, 

@@ -587,6 +587,17 @@ box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.37);
     padding-bottom: 2%;
 }
 
+.header3 {
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Avalon-Bold';
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 2%;
+}
+
 .headersub {
     color: white;
     font-size: .7em;

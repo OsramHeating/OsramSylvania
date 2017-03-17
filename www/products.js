@@ -30,8 +30,8 @@ function getProducts(){
             innerHTMLList = innerHTMLList + "<div class=\"product8\">  <h2 class=\"preproduct\">PRODUCT<br><span class=\"productname\">Heat Guns</span><div class=\"greydivider\"></div><p class=\"productdetail\">Heat guns are practical hand-held thermoplastic welding devices designed for all types of hot air applications. This simple, sturdy and high performance tool offers a very strong air output at 400 LPM. Combined with its low weight, the device has an efficient heating element that produces up to 1292°F / ( 700°C ). The OSRAM heat gun is available in 120V or 230V. The heating element insulating cover fits numerous modular accessories, flanges and replacement elements.</p></h2>  <a href=\"heatguns.html\"><div class=\"details\">SEE DETAILS</div></a></div>";
         }
     }
-    if(innerHTMLList == ""){
-        innerHTMLList = "<h1 class=\"header2\">Based on your values of SCFM and Wattage there are no heaters with specification within that range.<br><span class=\"titlelite\">Contact us about custom specialty heaters for your application.</span></h1>";
+    if(innerHTMLList == "" || (wattage == "" || wattage == null) || (SCFM == "" || SCFM == null)){
+        innerHTMLList = "<h1 class=\"header3\">Based on your values of SCFM and Wattage there are no heaters with specification within that range.<br><span class=\"titlelite\">Contact us about custom specialty heaters for your application.</span></h1>";
     }
     localStorage.setItem("listItems", JSON.stringify(innerHTMLList));
 }

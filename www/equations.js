@@ -16,10 +16,10 @@ function calculationValidate(calculationType){
         
         showAlert(a + " " + b + " " + c);
         
-        if(a == "" && b == "" && c == ""){
+        if(a === "" && b === "" && c === ""){
             showAlert("No inputs - \"\"");
         }
-        else if(a == null || b == null || c == null){
+        else if(a == null && b == null && c == null){
             showAlert("No inputs - NULL");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){

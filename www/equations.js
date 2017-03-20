@@ -10,35 +10,36 @@ function calculationValidate(calculationType){
         var b = document.getElementById("Temp").value;
         var c = document.getElementById("Watts").value;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
         
-        showAlert(a + " " + b + " " + c);
-        
-        if(a === "" && b === "" && c === ""){
-            showAlert("No inputs - \"\"");
-        }
-        else if(a == null && b == null && c == null){
-            showAlert("No inputs - NULL");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("SCFM").value = power_flowrate_temp(1, b, c);
-            lastCalculatedValue = power_flowrate_temp(1, b, c);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("Temp").value = power_flowrate_temp(2, a, c);
-            lastCalculatedValue = power_flowrate_temp(2, a, c);
-        }
-        else if(c == "" || c == null){
-            document.getElementById("Watts").value = power_flowrate_temp(3, a, b);
-            lastCalculatedValue = power_flowrate_temp(3, a, b);
+        if((aType && bType) || (aType && cType) || (bType && cType)){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave one blank for the answer");
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            
+            if(isNaN(a) || isNaN(b) || isNaN(c)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(aType){
+                document.getElementById("SCFM").value = power_flowrate_temp(1, b, c);
+                lastCalculatedValue = power_flowrate_temp(1, b, c);
+            }
+            else if(bType){
+                document.getElementById("Temp").value = power_flowrate_temp(2, a, c);
+                lastCalculatedValue = power_flowrate_temp(2, a, c);
+            }
+            else if(cType){
+                document.getElementById("Watts").value = power_flowrate_temp(3, a, b);
+                lastCalculatedValue = power_flowrate_temp(3, a, b);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 2){

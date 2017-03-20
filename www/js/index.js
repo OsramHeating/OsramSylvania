@@ -36,37 +36,22 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function(pageNum) {
                 ready = true;
-                var fileName = location.pathname.split("/").slice(-1)
-                var devicePlatform = device.platform;
-                /*
-                if(devicePlatform == "iOS"){
-                    if(fileName == "index.html"){
-                        var ow = document.getElementsByClassName('calcwrapper');
-                        var mb = document.getElementsByClassName('middlebar');
-                        var vb1 = document.getElementsByClassName('verticalbar');
-                        var vb2 = document.getElementsByClassName('verticalbar2');
-                        var vb3 = document.getElementsByClassName('verticalbar3');
-                        ow[0].style.top = "15px";
-                        mb[0].style.marginTop = "5%";
-                        vb1[0].style.top = "15px";
-                        vb2[0].style.top = "15px";
-                        vb3[0].style.top = "15px";
-                    }
-                    else if(fileName == "products.html"){
-                        
-                    }
-                    else{
-                        var hd = document.getElementsByClassName('header');
-                        var hdd = document.getElementsByClassName('headerdivider');
-                        hd[0].style.top = "5%";
-                        hdd[0].style.top = "5%";
-                        var cw = document.getElementsByClassName('calcwrapper');
-                        cw[0].style.bottom = "2%";
-                    }
-                }
-                */
+                //var devicePlatform = device.platform;
+                document.addEventListener('backbutton', backPressed, false);
     }
 };
+
+function backPressed(){
+    var fileName = location.pathname.split("/").slice(-1);
+    var previousScreen = 'powerflowrate.html';
+    if(fileName == "airtools.html" || fileName == "heatguns.html" || fileName == "series123.html" || fileName == "serpentine.html" || fileName == "sureheatmax.html" || fileName == "sureheatjet.html" || fileName == "sureheatmaxht.html" || fileName == "threaded.html"){
+        previousScreen = "products.html";
+    }
+    else if(fileName == "delta.html" || fileName == "heattransfer.html" || fileName == "ohmslaw.html" || fileName == "powerflowrate.html" || fileName == "psibar.html" || fileName == "singlephase.html" || fileName == "tempconvert.html" || fileName == "threephase.html"){
+        previousScreen = "index.html";
+    }
+    slide('right', 'black', 0.1, previousScreen);
+}
 
 function showAlert(msg) {
     if(ready){

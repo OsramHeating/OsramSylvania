@@ -14,6 +14,8 @@ function calculationValidate(calculationType){
         b = Number(b);
         c = Number(c);
         
+        showAlert(a + " " + b + " " + c);
+        
         if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
             showAlert("No inputs");
         }

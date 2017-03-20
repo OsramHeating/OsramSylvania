@@ -16,8 +16,11 @@ function calculationValidate(calculationType){
         
         showAlert(a + " " + b + " " + c);
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            showAlert("No inputs");
+        if(a == "" && b == "" && c == ""){
+            showAlert("No inputs - \"\"");
+        }
+        else if(a == null || b == null || c == null){
+            showAlert("No inputs - NULL");
         }
         else if(isNaN(a) || isNaN(b) || isNaN(c)){
             showAlert("One or more of your inputs are not a number");

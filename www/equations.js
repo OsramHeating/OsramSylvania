@@ -6,7 +6,6 @@ function alertDismissed(){
 }
 
 function calculationValidate(calculationType){
-    alert("test");
     nullCount = 0;
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;

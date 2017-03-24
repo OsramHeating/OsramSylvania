@@ -3,7 +3,6 @@ var nullCount = 0;
 
 function calculationValidate(calculationType){
     nullCount = 0;
-    showAlert("Calculating");
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;
         var b = document.getElementById("Temp").value;
@@ -311,7 +310,7 @@ function calculationValidate(calculationType){
             b = Number(b);
             c = Number(c);
             
-            else if(isNaN(a) || isNaN(b) || isNaN(c)){
+            if(isNaN(a) || isNaN(b) || isNaN(c)){
                 showAlert("One or more of your inputs are not a number");
             }
             else if(a == "" || a == null){
@@ -349,7 +348,7 @@ function calculationValidate(calculationType){
             a = Number(a);
             b = Number(b);
             
-            else if(isNaN(a) || isNaN(b)){
+            if(isNaN(a) || isNaN(b)){
                 showAlert("One or more of your inputs are not a number");
             }
             else if(a == "" || a == null){

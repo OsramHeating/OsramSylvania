@@ -3,6 +3,7 @@ var nullCount = 0;
 
 function calculationValidate(calculationType){
     nullCount = 0;
+    showAlert("Calculating");
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;
         var b = document.getElementById("Temp").value;

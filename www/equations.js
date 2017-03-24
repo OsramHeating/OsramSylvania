@@ -1,10 +1,8 @@
 var lastCalculatedValue = null;
-
-function alertDismissed(){
-    
-}
+var nullCount = 0;
 
 function calculationValidate(calculationType){
+    nullCount = 0;
     if(calculationType == 1){
         var a = document.getElementById("SCFM").value;
         var b = document.getElementById("Temp").value;
@@ -14,7 +12,11 @@ function calculationValidate(calculationType){
         var bType = b === "" || b == null;
         var cType = c === "" || c == null;
         
-        if((aType && bType) || (aType && cType) || (bType && cType)){
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
+        
+        if(nullCount > 1){
             showAlert("Not enough inputs");
         }
         else{
@@ -24,6 +26,9 @@ function calculationValidate(calculationType){
             
             if(isNaN(a) || isNaN(b) || isNaN(c)){
                 showAlert("One or more of your inputs are not a number");
+            }
+            else if(a === 0 && b === 0){
+                showAlert("Cannot Divide by zero");
             }
             else if(aType){
                 document.getElementById("SCFM").value = power_flowrate_temp(1, b, c);
@@ -46,25 +51,33 @@ function calculationValidate(calculationType){
         var a = document.getElementById("TempC").value;
         var b = document.getElementById("TempF").value;
         
-        a = Number(a);
-        b = Number(b);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
         
-        if((a == "" || a == null) && (b == "" || b == null)){
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        
+        if(nullCount > 1){
             showAlert("No inputs");
         }
-        else if(isNaN(a) || isNaN(b)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("TempC").value = temp_conversion(1, b);
-            lastCalculatedValue = temp_conversion(1, b);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("TempF").value = temp_conversion(2, a);
-            lastCalculatedValue = temp_conversion(2, a);
-        }
         else{
-            showAlert("You need to leave one blank for the answer");
+            a = Number(a);
+            b = Number(b);
+
+            if(isNaN(a) || isNaN(b)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(aType){
+                document.getElementById("TempC").value = temp_conversion(1, b);
+                lastCalculatedValue = temp_conversion(1, b);
+            }
+            else if(bType){
+                document.getElementById("TempF").value = temp_conversion(2, a);
+                lastCalculatedValue = temp_conversion(2, a);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 3){
@@ -72,61 +85,87 @@ function calculationValidate(calculationType){
         var b = document.getElementById("Voltage").value;
         var c = document.getElementById("LineCurrent").value;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            showAlert("No inputs");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("Wattage").value = three_phase_unit(1, b, c);
-            lastCalculatedValue = three_phase_unit(1, b, c);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("Voltage").value = three_phase_unit(2, a, c);
-            lastCalculatedValue = three_phase_unit(2, a, c);
-        }
-        else if(c == "" || c == null){
-            document.getElementById("LineCurrent").value = three_phase_unit(3, a, b);
-            lastCalculatedValue = three_phase_unit(3, a, b);
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
+        
+        if(nullCount > 1){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave one blank for the answer");
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            
+            if(isNaN(a) || isNaN(b) || isNaN(c)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(b === 0 || c === 0){
+                showAlert("Cannot Divide by zero");
+            }
+            else if(aType){
+                document.getElementById("Wattage").value = three_phase_unit(1, b, c);
+                lastCalculatedValue = three_phase_unit(1, b, c);
+            }
+            else if(bType){
+                document.getElementById("Voltage").value = three_phase_unit(2, a, c);
+                lastCalculatedValue = three_phase_unit(2, a, c);
+            }
+            else if(cType){
+                document.getElementById("LineCurrent").value = three_phase_unit(3, a, b);
+                lastCalculatedValue = three_phase_unit(3, a, b);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 4){
         var a = document.getElementById("Wattage2").value;
         var b = document.getElementById("Voltage2").value;
         var c = document.getElementById("LineCurrent2").value;
+
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            showAlert("No inputs");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("Wattage2").value = single_phase_unit(1, b, c);
-            lastCalculatedValue = single_phase_unit(1, b, c);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("Voltage2").value = single_phase_unit(2, a, c);
-            lastCalculatedValue = single_phase_unit(2, a, c);
-        }
-        else if(c == "" || c == null){
-            document.getElementById("LineCurrent2").value = single_phase_unit(3, a, b);
-            lastCalculatedValue = single_phase_unit(3, a, b);
+        if(nullCount > 1){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave one blank for the answer");
+            a = Number(a);
+            b = Number(b);
+            c = Number(c); 
+
+            if(isNaN(a) || isNaN(b) || isNaN(c)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(b === 0 || c === 0){
+                showAlert("Cannot Divide by zero");
+            }
+            else if(aType){
+                document.getElementById("Wattage2").value = single_phase_unit(1, b, c);
+                lastCalculatedValue = single_phase_unit(1, b, c);
+            }
+            else if(bType){
+                document.getElementById("Voltage2").value = single_phase_unit(2, a, c);
+                lastCalculatedValue = single_phase_unit(2, a, c);
+            }
+            else if(cType){
+                document.getElementById("LineCurrent2").value = single_phase_unit(3, a, b);
+                lastCalculatedValue = single_phase_unit(3, a, b);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 5){
@@ -135,43 +174,58 @@ function calculationValidate(calculationType){
         var c = document.getElementById("I").value;
         var d = document.getElementById("R").value;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
-        d = Number(d);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
+        var dType = d === "" || d == null;
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null)){
-            showAlert("No inputs");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if((a == "" || a == null) && (b == "" || b == null)){
-            document.getElementById("E").value = ohms_law(1, c, d);
-            document.getElementById("W").value = ohms_law(1, Math.pow(c, 2), d);
-        }
-        else if((a == "" || a == null) && (c == "" || c == null)){
-            document.getElementById("I").value = ohms_law(2, b, d);
-            document.getElementById("W").value = ohms_law(5, b, d);
-        }
-        else if((a == "" || a == null) && (d == "" || d == null)){
-            document.getElementById("W").value = ohms_law(1, b, c);
-            document.getElementById("R").value = ohms_law(2, b, c);
-        }
-        else if((b == "" || b == null) && (c == "" || c == null)){
-            document.getElementById("E").value = ohms_law(3, a, d);
-            document.getElementById("I").value = ohms_law(4, a, d);
-        }
-        else if((b == "" || b == null) && (d == "" || d == null)){
-            document.getElementById("E").value = ohms_law(2, a, c);
-            document.getElementById("R").value = ohms_law(6, a, c);
-        }
-        else if((c == "" || c == null) && (d == "" || d == null)){
-            document.getElementById("I").value = ohms_law(2, a, b);
-            document.getElementById("R").value = ohms_law(5, b, a);
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
+        if(dType)nullCount+=1;
+        
+        if(nullCount == 3){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave two blank for the answer");
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            d = Number(d);
+            
+            if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if((bType && dType && c === 0) || (aType && bType && d === 0) || (aType && cType && d === 0) || (cType && dType && (a === 0 || b === 0))){
+                showAlert("Cannot Divide by zero");
+            }
+            else if((a == "" || a == null) && (b == "" || b == null)){
+                document.getElementById("E").value = ohms_law(1, c, d);
+                document.getElementById("W").value = ohms_law(1, Math.pow(c, 2), d);
+            }
+            else if((a == "" || a == null) && (c == "" || c == null)){
+                document.getElementById("I").value = ohms_law(2, b, d);
+                document.getElementById("W").value = ohms_law(5, b, d);
+            }
+            else if((a == "" || a == null) && (d == "" || d == null)){
+                document.getElementById("W").value = ohms_law(1, b, c);
+                document.getElementById("R").value = ohms_law(2, b, c);
+            }
+            else if((b == "" || b == null) && (c == "" || c == null)){
+                document.getElementById("E").value = ohms_law(3, a, d);
+                document.getElementById("I").value = ohms_law(4, a, d);
+            }
+            else if((b == "" || b == null) && (d == "" || d == null)){
+                document.getElementById("E").value = ohms_law(2, a, c);
+                document.getElementById("R").value = ohms_law(6, a, c);
+            }
+            else if((c == "" || c == null) && (d == "" || d == null)){
+                document.getElementById("I").value = ohms_law(2, a, b);
+                document.getElementById("R").value = ohms_law(5, b, a);
+            }
+            else{
+                showAlert("You need to leave two blank for the answer");
+            }
         }
     }
     else if(calculationType == 6){
@@ -181,40 +235,58 @@ function calculationValidate(calculationType){
         var d = document.getElementById("temperaturedifferential").value;
         var e = document.getElementById("Q").value;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
-        d = Number(d);
-        e = Number(e);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
+        var dType = d === "" || d == null;
+        var eType = e === "" || e == null;
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null) && (d == "" || d == null) && (e == "" || e == null)){
-            showAlert("No inputs");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("density").value = convection(2, e, b, c, d);
-            lastCalculatedValue = convection(2, e, b, c, d);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("volumeflowrate").value = convection(2, e, a, c, d);
-            lastCalculatedValue = convection(2, e, a, c, d);
-        }
-        else if(c == "" || c == null){
-            document.getElementById("specificheat").value = convection(2, e, a, b, d);
-            lastCalculatedValue = convection(2, e, a, b, d);
-        }
-        else if(d == "" || d == null){
-            document.getElementById("temperaturedifferential").value = convection(2, e, a, b, c);
-            lastCalculatedValue = convection(2, e, a, b, c);
-        }
-        else if(e == "" || e == null){
-            document.getElementById("Q").value = convection(1, a, b, c, d);
-            lastCalculatedValue = convection(1, a, b, c, d);
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
+        if(dType)nullCount+=1;
+        if(eType)nullCount+=1;
+        
+        if(nullCount > 1){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave one blank for the answer");
+
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            d = Number(d);
+            e = Number(e);
+            
+            if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if((aType && (b===0||c===0||d===0)) || (bType && (a===0||c===0||d===0)) || (cType && (b===0||a===0||d===0)) || (dType && (b===0||c===0||a===0))){
+                showAlert("Cannot Divide by zero");
+            }
+            else if(a == "" || a == null){
+                document.getElementById("density").value = convection(2, e, b, c, d);
+                lastCalculatedValue = convection(2, e, b, c, d);
+            }
+            else if(b == "" || b == null){
+                document.getElementById("volumeflowrate").value = convection(2, e, a, c, d);
+                lastCalculatedValue = convection(2, e, a, c, d);
+            }
+            else if(c == "" || c == null){
+                document.getElementById("specificheat").value = convection(2, e, a, b, d);
+                lastCalculatedValue = convection(2, e, a, b, d);
+            }
+            else if(d == "" || d == null){
+                document.getElementById("temperaturedifferential").value = convection(2, e, a, b, c);
+                lastCalculatedValue = convection(2, e, a, b, c);
+            }
+            else if(e == "" || e == null){
+                document.getElementById("Q").value = convection(1, a, b, c, d);
+                lastCalculatedValue = convection(1, a, b, c, d);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 7){
@@ -222,55 +294,74 @@ function calculationValidate(calculationType){
         var b = document.getElementById("TempIn").value;
         var c = document.getElementById("TempDelta").value;
         
-        a = Number(a);
-        b = Number(b);
-        c = Number(c);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
+        var cType = c === "" || c == null;
         
-        if((a == "" || a == null) && (b == "" || b == null) && (c == "" || c == null)){
-            showAlert("No inputs");
-        }
-        else if(isNaN(a) || isNaN(b) || isNaN(c)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("TempExit").value = delta(1, b, c);
-            lastCalculatedValue = delta(1, b, c);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("TempIn").value = delta(2, a, c);
-            lastCalculatedValue = delta(2, a, c);
-        }
-        else if(c == "" || c == null){
-            document.getElementById("TempDelta").value = delta(3, a, b);
-            lastCalculatedValue = delta(3, a, b);
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        if(cType)nullCount+=1;
+        
+        if(nullCount > 1){
+            showAlert("Not enough inputs");
         }
         else{
-            showAlert("You need to leave one blank for the answer");
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            
+            else if(isNaN(a) || isNaN(b) || isNaN(c)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(a == "" || a == null){
+                document.getElementById("TempExit").value = delta(1, b, c);
+                lastCalculatedValue = delta(1, b, c);
+            }
+            else if(b == "" || b == null){
+                document.getElementById("TempIn").value = delta(2, a, c);
+                lastCalculatedValue = delta(2, a, c);
+            }
+            else if(c == "" || c == null){
+                document.getElementById("TempDelta").value = delta(3, a, b);
+                lastCalculatedValue = delta(3, a, b);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else if(calculationType == 8){
         var a = document.getElementById("PSI").value;
         var b = document.getElementById("BAR").value;
         
-        a = Number(a);
-        b = Number(b);
+        var aType = a === "" || a == null;
+        var bType = b === "" || b == null;
         
-        if((a == "" || a == null) && (b == "" || b == null)){
+        if(aType)nullCount+=1;
+        if(bType)nullCount+=1;
+        
+        if(nullCount > 1){
             showAlert("No inputs");
         }
-        else if(isNaN(a) || isNaN(b)){
-            showAlert("One or more of your inputs are not a number");
-        }
-        else if(a == "" || a == null){
-            document.getElementById("PSI").value = psi_bar(1, b);
-            lastCalculatedValue = psi_bar(1, b);
-        }
-        else if(b == "" || b == null){
-            document.getElementById("BAR").value = psi_bar(2, a);
-            lastCalculatedValue = psi_bar(2, a);
-        }
         else{
-            showAlert("You need to leave one blank for the answer");
+        
+            a = Number(a);
+            b = Number(b);
+            
+            else if(isNaN(a) || isNaN(b)){
+                showAlert("One or more of your inputs are not a number");
+            }
+            else if(a == "" || a == null){
+                document.getElementById("PSI").value = psi_bar(1, b);
+                lastCalculatedValue = psi_bar(1, b);
+            }
+            else if(b == "" || b == null){
+                document.getElementById("BAR").value = psi_bar(2, a);
+                lastCalculatedValue = psi_bar(2, a);
+            }
+            else{
+                showAlert("You need to leave one blank for the answer");
+            }
         }
     }
     else{

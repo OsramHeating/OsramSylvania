@@ -31,7 +31,7 @@ function calculationValidate(calculationType){
             if(isNaN(a) || isNaN(b) || isNaN(c)){
                 showAlert("One or more of your inputs are not a number");
             }
-            else if((bType && a === 0) || (aType && b === 0)){
+            else if(a === 0 && b === 0){
                 showAlert("Cannot Divide by zero");
             }
             else if(aType){
@@ -108,7 +108,7 @@ function calculationValidate(calculationType){
             if(isNaN(a) || isNaN(b) || isNaN(c)){
                 showAlert("One or more of your inputs are not a number");
             }
-            else if((cType && b === 0) || (bType && c === 0)){
+            else if(b === 0 || c === 0){
                 showAlert("Cannot Divide by zero");
             }
             else if(aType){
@@ -152,7 +152,7 @@ function calculationValidate(calculationType){
             if(isNaN(a) || isNaN(b) || isNaN(c)){
                 showAlert("One or more of your inputs are not a number");
             }
-            else if((cType && b === 0) || (bType && c === 0)){
+            else if(b === 0 || c === 0){
                 showAlert("Cannot Divide by zero");
             }
             else if(aType){

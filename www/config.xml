@@ -6,7 +6,7 @@
         id        = "com.osram.application"
         version   = "1.0.0">
 
-    <name>Calculator</name>
+    <name>Serpentine Calculator</name>
 
     <description>
         Calculation app that contains 8 commonly used equations and product detail information containing data about various products.

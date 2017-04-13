@@ -35,27 +35,28 @@
     <preference name="StatusBarOverlaysWebView"     value="false" />
     <preference name="StatusBarBackgroundColor"     value="#000000" />
     <preference name="StatusBarStyle"               value="lightcontent" />
+    <preference name="prerendered-icon"             value="true" />
     
-    <icon src="icon.png"/>
+    <icon src="icon.png" gap:role="default" />
     
     <platform name="android">
     </platform>
 
     <platform name="ios">
-        <icon src="res/icon/ios/icon.png" width="57" height="57" />
-        <icon src="res/icon/ios/icon-2x.png" width="114" height="114" />
-        <icon src="res/icon/ios/icon-40.png" width="40" height="40" />
-        <icon src="res/icon/ios/icon-50.png" width="50" height="50" />
-        <icon src="res/icon/ios/icon-50-2x.png" width="100" height="100" />
-        <icon src="res/icon/ios/icon-57.png" width="57" height="57" />
-        <icon src="res/icon/ios/icon-60.png" width="60" height="60" />
-        <icon src="res/icon/ios/icon-60-2x.png" width="120" height="120" />
-        <icon src="res/icon/ios/icon-60-3x.png" width="180" height="180" />
-        <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
-        <icon src="res/icon/ios/icon-72-2x.png" width="144" height="144" />
-        <icon src="res/icon/ios/icon-76.png" width="76" height="76" />
-        <icon src="res/icon/ios/icon-76-2x.png" width="152" height="152" />
-        <icon src="res/icon/ios/icon-small.png" width="29" height="29" />
-        <icon src="res/icon/ios/icon-small-2x.png" width="58" height="58" />
+        <icon src="res/icon/ios/icon.png" gap:role="default" width="57" height="57" />
+        <icon src="res/icon/ios/icon-2x.png" gap:role="default" width="114" height="114" />
+        <icon src="res/icon/ios/icon-40.png" gap:role="default" width="40" height="40" />
+        <icon src="res/icon/ios/icon-50.png" gap:role="default" width="50" height="50" />
+        <icon src="res/icon/ios/icon-50-2x.png" gap:role="default" width="100" height="100" />
+        <icon src="res/icon/ios/icon-57.png" gap:role="default" width="57" height="57" />
+        <icon src="res/icon/ios/icon-60.png" gap:role="default" width="60" height="60" />
+        <icon src="res/icon/ios/icon-60-2x.png" gap:role="default" width="120" height="120" />
+        <icon src="res/icon/ios/icon-60-3x.png" gap:role="default" width="180" height="180" />
+        <icon src="res/icon/ios/icon-72.png" gap:role="default" width="72" height="72" />
+        <icon src="res/icon/ios/icon-72-2x.png" gap:role="default" width="144" height="144" />
+        <icon src="res/icon/ios/icon-76.png" gap:role="default" width="76" height="76" />
+        <icon src="res/icon/ios/icon-76-2x.png" gap:role="default" width="152" height="152" />
+        <icon src="res/icon/ios/icon-small.png" gap:role="default" width="29" height="29" />
+        <icon src="res/icon/ios/icon-small-2x.png" gap:role="default" width="58" height="58" />
     </platform>
 </widget>

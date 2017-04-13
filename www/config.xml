@@ -35,9 +35,9 @@
     <preference name="StatusBarOverlaysWebView"     value="false" />
     <preference name="StatusBarBackgroundColor"     value="#000000" />
     <preference name="StatusBarStyle"               value="lightcontent" />
-    <preference name="prerendered-icon"             value="true" />
+    <preference name="prerendered-icon"             value="false" />
     
-    <icon src="icon.png" gap:role="default" />
+    <icon src="icon.png" gap:role="default" width="512" height="512"/>
     
     <platform name="android">
     </platform>

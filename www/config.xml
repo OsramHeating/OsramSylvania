@@ -38,7 +38,7 @@
     <preference name="prerendered-icon"             value="false" />
     
     <icon src="icon.png" gap:role="default" width="512" height="512"/>
-    
+    <splash src="splash.png" gap:role="default" width="1530" height="473"/>
     <platform name="android">
     </platform>
 

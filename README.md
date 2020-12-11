@@ -1,2 +1,2 @@
-OSRAM Sylvania Serpentine Calculator.
+Serpentine Calculator.
 
